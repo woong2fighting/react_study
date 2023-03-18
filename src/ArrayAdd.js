@@ -1,28 +1,40 @@
-import React from 'react';
+import React from "react";
 
-function ArrayAdd({username, email, onInputChange, onCreateClick}){
-    console.log("ArrayAdd component! - input, button ")
+function ArrayRender1(){
+  const users = [
+    { 
+      id: 1,
+      username: 'user1',
+      email: 'user1@gmail.com'
+    },
+    {
+      id: 2,
+      username: 'user2',
+      email: 'user2@gmail.com'
+
+    },
+    {
+      id: 3,
+      username: 'user3',
+      email: 'user3@gmail.com'
+    }
+  ]
 
   return(
     <div>
-      <input 
-      name="username"
-      placeholder="계정명"
-      onChange={onInputChange}
-      value={username}
-      />
-
-      <input
-      name="email"
-      placeholder="이메일"
-      onChange={onInputChange}
-      value={email}
-      />
-
-      <button onClick={onCreateClick}>등록</button>
+      <div>
+        <b>{users[0].username}</b><span>({users[0].email})</span>
+      </div>
+      <div>
+      <b>{users[1].username}</b><span>({users[1].email})</span>
+      </div>
+      <div>
+      <b>{users[2].username}</b><span>({users[2].email})</span>
+      </div>
 
     </div>
   )
+
 }
 
-export default React.memo(ArrayAdd);
+export default ArrayRender1
